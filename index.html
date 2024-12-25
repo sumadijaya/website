@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        p{
+            color: rgb(240, 68, 68);
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            transform: rotate(-45deg);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-45deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(-45deg);
+            }
+        }
+
+        .message {
+            position: absolute;
+            top: 80%;
+            text-align: center;
+            color: rgb(177, 5, 5);
+            font-size: 24px;
+            animation: fadeIn 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .hearts span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 0, 0, 0.8);
+            opacity: 0.8;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            animation: moveUp 6s infinite;
+        }
+
+        @keyframes moveUp {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        .hearts span:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .hearts span:nth-child(2) {
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .hearts span:nth-child(3) {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .hearts span:nth-child(4) {
+            left: 40%;
+            animation-delay: 3s;
+        }
+
+        .hearts span:nth-child(5) {
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .hearts span:nth-child(6) {
+            left: 60%;
+            animation-delay: 5s;
+        }
+
+        .hearts span:nth-child(7) {
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        .photo {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            animation: photoBounce 3s ease-in-out infinite;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes photoBounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+            50% {
+                transform: translate(-50%, -20px);
+            }
+        }
+
+        .flowers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .flowers span {
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: url('https://via.placeholder.com/40/ff7f7f/ffffff?text=%E2%99%A5') no-repeat center center;
+            background-size: contain;
+            animation: flowerFall 5s linear infinite;
+        }
+
+        @keyframes flowerFall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .flowers span:nth-child(1) {
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .flowers span:nth-child(2) {
+            left: 15%;
+            animation-delay: 1s;
+        }
+
+        .flowers span:nth-child(3) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .flowers span:nth-child(4) {
+            left: 35%;
+            animation-delay: 3s;
+        }
+
+        .flowers span:nth-child(5) {
+            left: 45%;
+            animation-delay: 4s;
+        }
+
+        .flowers span:nth-child(6) {
+            left: 55%;
+            animation-delay: 5s;
+        }
+
+        .flowers span:nth-child(7) {
+            left: 65%;
+            animation-delay: 6s;
+        }
+
+        .flowers span:nth-child(8) {
+            left: 75%;
+            animation-delay: 7s;
+        }
+
+        .flowers span:nth-child(9) {
+            left: 85%;
+            animation-delay: 8s;
+        }
+
+        .flowers span:nth-child(10) {
+            left: 95%;
+            animation-delay: 9s;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="flowers">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="photo">
+        <img src="wasim2.jpg" alt="Photo">
+    </div>
+    <div class="heart"></div>       
+    <div class="message">I LOVE YOU FOREVER💖💖 !
+                 <P>🌸kamu adalah wanita yang terbaik dalam hidupku,kalo gak ada kamu sejujurnya aku sudah mati rasa🌸</P>
+                 <p>🌸bersama-sama terus ya sayank,kita pecahin masalah bareng-bareng🌸</p>
+                
+    </div>
+</body>
+</html>
+
